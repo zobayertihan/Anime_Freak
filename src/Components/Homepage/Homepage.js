@@ -35,7 +35,7 @@ const Homepage = () => {
 
                         <Personal></Personal>
                         <BreakTime></BreakTime>
-                        {/* <Details></Details> */}
+                        <Details></Details>
                         <button className='btn btn-primary'>Acitivity Complete</button>
                     </div>
                 </div>
