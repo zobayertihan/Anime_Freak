@@ -33,8 +33,8 @@ const Homepage = () => {
                     </div>
                     <div className=" col-3 pt-5">
                         <Personal></Personal>
-                        <BreakTime></BreakTime>
-                        <Details></Details>
+                        {/* <BreakTime></BreakTime> */}
+                        {/* <Details></Details> */}
                         <button className='btn btn-primary'>Acitivity Complete</button>
                     </div>
                 </div>
