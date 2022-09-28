@@ -1,93 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import BreakTime from '../BreakTime/BreakTime';
+import Content from '../Content/Content';
+import Details from '../Details/Details';
+import Personal from '../Personal/Personal';
 
 
 
 const Homepage = () => {
+
+    const [contents, setContents] = useState([]);
+    useEffect(() => {
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => setContents(data))
+    }, [])
+
+
     return (
         <div>
-            <section className='container text-center mt-5'>
-                <div className="row">
-                    <div className="card col-9">
+            <section className='container text-center'>
+                <div className="row p-5">
+                    <div className=" col-9">
                         <h4 className='text-start'>Select the animes you want to watch today.</h4>
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                            <div class="col">
-                                <div class="card pb-2">
-                                    <img src="..." class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button className='btn btn-primary btn-sm w-50 '>Watch</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card pb-2">
-                                    <img src="..." class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button className='btn btn-primary btn-sm w-50 '>Watch</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card pb-2">
-                                    <img src="..." class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                                    </div>
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button className='btn btn-primary btn-sm w-50 '>Watch</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card pb-2">
-                                    <img src="..." class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button className='btn btn-primary btn-sm w-50 '>Watch</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card pb-2">
-                                    <img src="..." class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button className='btn btn-primary btn-sm w-50 '>Watch</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card pb-2">
-                                    <img src="..." class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button className='btn btn-primary btn-sm w-50 '>Watch</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                            {
+                                contents.map(content => <Content
+                                    key={content.id}
+                                    content={content}
+                                ></Content>)
+                            }
                         </div>
                     </div>
-                    <div className="card col-3 pt-5">
-                        <div>
-                            <img src="..." className='card-img-top' alt="..." />
-                        </div>
+                    <div className=" col-3 pt-5">
+                        <Personal></Personal>
+                        <BreakTime></BreakTime>
+                        <Details></Details>
                         <button className='btn btn-primary'>Acitivity Complete</button>
                     </div>
                 </div>
