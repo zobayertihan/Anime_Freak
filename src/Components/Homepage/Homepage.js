@@ -44,7 +44,7 @@ const Homepage = () => {
         <div>
             <section className='container text-center'>
                 <div className="row p-5">
-                    <div className=" col-md-9 col-sm-12">
+                    <div className=" col-lg-9 col-md-12">
                         <h4 className='text-start mb-5'>Select the animes you want to watch today.</h4>
                         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                             {
@@ -56,7 +56,7 @@ const Homepage = () => {
                             }
                         </div>
                     </div>
-                    <div className=" col-md-3 pt-5">
+                    <div className=" col-lg-3 pt-5">
 
                         <Personal></Personal>
                         <BreakTime

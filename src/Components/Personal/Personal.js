@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '.././Images/luffy.jpg';
+import img from '.././Images/edted-152.jpg';
 import './Personal.css'
 
 const Personal = () => {
@@ -7,8 +7,9 @@ const Personal = () => {
         <div >
             <div>
                 <img src={img} className='card-img-top rounded-circle w-25' alt="..." />
-                <p>Monkey D. Luffy</p>
+                <p>Tihan Zobayer</p>
             </div>
+            <h2>Watched</h2>
             <div>
                 <div className="row row-cols-3 p-2 bg-light">
                     <div>
@@ -21,7 +22,7 @@ const Personal = () => {
                     </div>
                     <div>
                         <h2>23</h2>
-                        <p>Age</p>
+                        <p>Short-Film</p>
                     </div>
                 </div>
 
