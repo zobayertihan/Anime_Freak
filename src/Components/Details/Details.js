@@ -9,7 +9,7 @@ const Details = (props) => {
                 <h6>Total Watch Time: {watch}m</h6>
             </div>
             <div className='d-flex justify-content-between'>
-                {/* <h6>Break Time: {breaks}m</h6> */}
+                <h6>Break Time: {breaks}m</h6>
             </div>
         </div>
     );
