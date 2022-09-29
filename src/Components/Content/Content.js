@@ -14,7 +14,7 @@ const Content = (props) => {
                         <p className="card-text">Time: {time}m</p>
                     </div>
                     <div className='d-flex justify-content-center align-items-center'>
-                        <button onClick={() => props.addToField(name, time)} className='btn btn-primary btn-sm w-50 '>Watch</button>
+                        <button onClick={() => props.addToField(time)} className='btn btn-primary btn-sm w-50 '>Watch</button>
                     </div>
                 </div>
             </div>

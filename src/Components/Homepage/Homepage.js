@@ -10,13 +10,15 @@ const Homepage = () => {
 
     const [contents, setContents] = useState([]);
     const [watch, setWatch] = useState([0]);
-    const [breaks, setBreaks] = useState([0])
+    const x = localStorage.getItem('breakTime')
+    const [breaks, setBreaks] = useState([x]);
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setContents(data))
     }, [])
-    const addToField = (name, time) => {
+
+    const addToField = (time) => {
 
         const newWatchTime = parseInt(watch) + time;
         setWatch(newWatchTime)
@@ -27,7 +29,6 @@ const Homepage = () => {
         const newBreakTime = value;
         setBreaks(newBreakTime)
         localStorage.setItem("breakTime", newBreakTime);
-
     }
 
     return (
