@@ -5,13 +5,20 @@ import Details from '../Details/Details';
 import Personal from '../Personal/Personal';
 
 
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Homepage = () => {
 
     const [contents, setContents] = useState([]);
+
     const [watch, setWatch] = useState([0]);
+
     const x = localStorage.getItem('breakTime')
     const [breaks, setBreaks] = useState([x]);
+
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -19,10 +26,10 @@ const Homepage = () => {
     }, [])
 
     const addToField = (time) => {
-
         const newWatchTime = parseInt(watch) + time;
         setWatch(newWatchTime)
     }
+
     const addBreakTime = (value) => {
         // localStorage.getItem("breakTime", value)
         // localStorage.getItem(value)
@@ -30,6 +37,8 @@ const Homepage = () => {
         setBreaks(newBreakTime)
         localStorage.setItem("breakTime", newBreakTime);
     }
+
+    // const notify = () => toast("Wow so easy!");
 
     return (
         <div>
@@ -58,7 +67,38 @@ const Homepage = () => {
                             watch={watch}
                             breaks={breaks}
                         ></Details>
-                        <button className='btn btn-primary'>Acitivity Complete</button>
+                        <div>
+                            <button className='btn btn-primary'>Acitivity Complete</button>
+                            {/* <ToastContainer /> */}
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col card">
+                        <div className="card-body">
+                            <h3 className="card-title">How does react Work?</h3>
+                            <p className="card-text">Time: </p>
+                        </div>
+                    </div>
+                    <div className="col card">
+                        <div className="card-body">
+                            <h3 className="card-title">Difference between Props and State</h3>
+                            <p className="card-text">Time: </p>
+                        </div>
+                    </div>
+                    <div className="col card">
+                        <div className="card-body">
+                            <h3 className="card-title">UseEffect Api is used for other purposes than loading data?</h3>
+                            <p className="card-text">The purposes of useEffect: <ol className='text-start'>
+                                <li>fetch API data</li>
+                                <li>validating input field</li>
+                                <li>live filtering</li>
+                                <li>trigger animation on new array value</li>
+                                <li>update paragraph list on fetched API data update</li>
+                                <li>updating fetched API data to get BTC updated price</li>
+                            </ol>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
