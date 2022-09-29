@@ -5,8 +5,8 @@ import Details from '../Details/Details';
 import Personal from '../Personal/Personal';
 
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -38,14 +38,14 @@ const Homepage = () => {
         localStorage.setItem("breakTime", newBreakTime);
     }
 
-    // const notify = () => toast("Wow so easy!");
+    const notify = () => toast("Yay You Completed the whole Series. Congratulations!!");
 
     return (
         <div>
             <section className='container text-center'>
                 <div className="row p-5">
                     <div className=" col-9">
-                        <h4 className='text-start'>Select the animes you want to watch today.</h4>
+                        <h4 className='text-start mb-5'>Select the animes you want to watch today.</h4>
                         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                             {
                                 contents.map(content => <Content
@@ -68,12 +68,13 @@ const Homepage = () => {
                             breaks={breaks}
                         ></Details>
                         <div>
-                            <button className='btn btn-primary'>Acitivity Complete</button>
-                            {/* <ToastContainer /> */}
+                            <button onClick={notify} className='btn btn-primary'>Acitivity Complete</button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row p-2 m-3">
+                    <h1 className='p-2'>Questions and Answers</h1>
                     <div className="col card">
                         <div className="card-body">
                             <h3 className="card-title">How does react Work?</h3>
