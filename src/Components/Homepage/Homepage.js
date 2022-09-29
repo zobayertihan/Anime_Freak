@@ -9,12 +9,26 @@ import Personal from '../Personal/Personal';
 const Homepage = () => {
 
     const [contents, setContents] = useState([]);
+    const [watch, setWatch] = useState([0]);
+    const [breaks, setBreaks] = useState([0])
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setContents(data))
     }, [])
+    const addToField = (name, time) => {
 
+        const newWatchTime = parseInt(watch) + time;
+        setWatch(newWatchTime)
+    }
+    const addBreakTime = (value) => {
+        // localStorage.getItem("breakTime", value)
+        // localStorage.getItem(value)
+        const newBreakTime = value;
+        setBreaks(newBreakTime)
+        localStorage.setItem("breakTime", newBreakTime);
+
+    }
 
     return (
         <div>
@@ -27,6 +41,7 @@ const Homepage = () => {
                                 contents.map(content => <Content
                                     key={content.id}
                                     content={content}
+                                    addToField={addToField}
                                 ></Content>)
                             }
                         </div>
@@ -34,8 +49,14 @@ const Homepage = () => {
                     <div className=" col-3 pt-5">
 
                         <Personal></Personal>
-                        <BreakTime></BreakTime>
-                        <Details></Details>
+                        <BreakTime
+                            addBreakTime={addBreakTime}
+
+                        ></BreakTime>
+                        <Details
+                            watch={watch}
+                            breaks={breaks}
+                        ></Details>
                         <button className='btn btn-primary'>Acitivity Complete</button>
                     </div>
                 </div>
