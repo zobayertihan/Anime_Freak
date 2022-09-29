@@ -83,20 +83,36 @@ const Homepage = () => {
                     <div className="col card">
                         <div className="card-body">
                             <h3 className="card-title">Difference between Props and State</h3>
-                            <p className="card-text">Time: </p>
+                            <p className="card-text">
+                                <h2>Props:</h2>
+                                <ol className='text-start'>
+                                    <li>The Data is passed from one component to another.</li>
+                                    <li>It is Immutable (cannot be modified).</li>
+                                    <li>Props can be used with state and functional components.</li>
+                                    <li>Props are read-only.</li>
+                                </ol>
+                                <h2>State:</h2>
+                                <ol className='text-start'>
+                                    <li>The Data is passed within the component only.</li>
+                                    <li>It is Mutable ( can be modified).</li>
+                                    <li>State can be used only with the state components/class component.</li>
+                                    <li>State is both read and write.</li>
+                                </ol>
+                            </p>
                         </div>
                     </div>
                     <div className="col card">
                         <div className="card-body">
                             <h3 className="card-title">UseEffect Api is used for other purposes than loading data?</h3>
-                            <p className="card-text">The purposes of useEffect: <ol className='text-start'>
-                                <li>fetch API data</li>
-                                <li>validating input field</li>
-                                <li>live filtering</li>
-                                <li>trigger animation on new array value</li>
-                                <li>update paragraph list on fetched API data update</li>
-                                <li>updating fetched API data to get BTC updated price</li>
-                            </ol>
+                            <p className="card-text"><h2>The purposes of useEffect:</h2>
+                                <ol className='text-start'>
+                                    <li>fetch API data</li>
+                                    <li>validating input field</li>
+                                    <li>live filtering</li>
+                                    <li>trigger animation on new array value</li>
+                                    <li>update paragraph list on fetched API data update</li>
+                                    <li>updating fetched API data to get BTC updated price</li>
+                                </ol>
                             </p>
                         </div>
                     </div>
